@@ -5,7 +5,7 @@ The datasource is dict.cc's DE<>EN dictionary. The original file was parsed usin
 
 Dict.cc license:
 
-# DE-EN vocabulary database	compiled by dict.cc
+/# DE-EN vocabulary database	compiled by dict.cc
 # Date and time	2022-08-12 15:49
 # License	THIS WORK IS PROTECTED BY INTERNATIONAL COPYRIGHT LAWS!
 # License	Private use is allowed as long as the data, or parts of it, are not published or given away.
