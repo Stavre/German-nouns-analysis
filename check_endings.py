@@ -1,10 +1,10 @@
 import pandas as pd
-pd.set_option('display.max_rows', 50000)
+"""pd.set_option('display.max_rows', 5)
 pd.set_option('display.max_columns', 500)
-pd.set_option('display.width', 1000)
+pd.set_option('display.width', 1000)"""
 from main import parse_dict
 
-# get dictionary
+#get dictionary
 #df = parse_dict("de_en_dictionary.txt")
 df = pd.read_csv("dictionary.csv")
 
@@ -36,62 +36,66 @@ df = df[~df["Word"].str.contains(" ", na=False)]
 df.drop_duplicates(inplace=True)
 # 432127 rows left
 
-
-############## check gender
-
-# retrieve words that contain "{m}" in Word class definitions
-m = df[df["Word class definitions"].str.contains("{m}", na=False)]
-
-# check how many categories are
-options_m = set(list(m["Word class definitions"]))
-#print(options_m)
-
-# we notice  '{n} {m} {f}', '{m} {f} {n}', '{f} {m} {n}', '{m} {n} {f}',  and '{f} {n} {m}'. These are not useful.
-# 24 nouns were found with these genders
-# All nouns with three genders will be removed
-delete = ['{n} {m} {f}', '{m} {f} {n}', '{f} {m} {n}', '{m} {n} {f}', '{f} {n} {m}']
-df = df[~df["Word class definitions"].isin(delete)]
-# 432105 rows left
-print(df)
-
-#df.to_csv("dict", sep="_")
-
+############## check male gender #############################
 
 # retrieve words that contain "{m}" in Word class definitions
 m = df[df["Word class definitions"].str.contains("{m}", na=False)]
 
+# retrieve words that contain not only {m}
+m = m[m["Word class definitions"] != "{m}"]
+# there are 1278 entries
+
 # check how many categories are
 options_m = set(list(m["Word class definitions"]))
-#print(options_m)
 
-# these groups were found
-# '{m} bei Nichtmelden {n}', '{n} {m}', '{n}  {m}', '{m} {n}', '{f}  {m}', '{f} / Bischofshut {m}',
-# '{f} / Kleiner {m} / Kleines {n}', '{f}; Gegenwall {m}', '{m} und Gestalt {f}', '{m} auf weltliche Güter {pl}',
-# '{m} {f} {pl}', '{m}', '{f} {m}', '{m} und Tigris {m}', '{m} {pl}', '{m} Phoebe {f}', '{m} {f}', '{m}  {f}'
+# For a simpler analysis these categories will be deleted
+# Another approach would have been to keep nouns with two genders and use the first one as the main gender
+# However, this would lead to more complexity in the analysis
 
-# Some of them are virtually identical ('{n} {m}' and '{n}  {m}', or '{m} {f}' and '{m}  {f}')
-# Some have their order changed ('{n}  {m}' and '{m} {n}')
+df.reset_index()
+df.drop(df[df["Word class definitions"].isin(options_m)].index, inplace=True)
+# 430849 rows left
 
-# Some special labels also appeared
-# label                       no. of appearances
-# '{m} Phoebe {f}'                   1
-# {m} und Tigris {m}                 1
-# {m} auf weltliche Güter {pl}       1
-# {m} und Gestalt {f}                1
-# {f}; Gegenwall {m}                 1
-# {f} / Kleiner {m} / Kleines {n}    1
-# {f} / Bischofshut {m}              1
-# {m} bei Nichtmelden {n}            1
+########################### check female gender ###############################
 
+# retrieve words that contain "{f}" in Word class definitions
+f = df[df["Word class definitions"].str.contains("{f}", na=False)]
 
+# retrieve words that contain not only {f}
+f = f[f["Word class definitions"] != "{f}"]
+# 167 entries were found. They will be deleted
+options_f = set(list(f["Word class definitions"]))
 
-
+df.reset_index()
+df.drop(df[df["Word class definitions"].isin(options_f)].index, inplace=True)
+# 430682 rows left
 
 
-# check if nouns have gender
-df = df[df["Word class definitions"].str.match("{f}|{m}|{n}", na=False)]
-# we get 789421 rows
+######################## check neutral gender  ###########################################
 
 
+# retrieve words that contain "{n}" in Word class definitions
+n = df[df["Word class definitions"].str.contains("{n}", na=False)]
 
+# retrieve words that contain not only {n}
+n = n[n["Word class definitions"] != "{n}"]
+# 18 entries were found. They will be deleted
 
+options_n = set(list(n["Word class definitions"]))
+
+df.reset_index()
+df.drop(df[df["Word class definitions"].isin(options_n)].index, inplace=True)
+# 430664 rows left
+
+################## delete plural entries ####################
+df.drop(df[df["Word class definitions"] == "{pl}"].index, inplace=True)
+# 388524 rows left
+
+# drop NaN rows
+df.dropna(inplace=True)
+# 388316 rows left
+
+# Check if there are other values on column Word class definitions besides {m}, {f}, and {n}
+# df.drop(df[df["Word class definitions"].isin(options_f)].index, inplace=True)
+df = df[df["Word class definitions"].isin(['{m}', "{f}", "{n}"])]
+# 388311 rows left
