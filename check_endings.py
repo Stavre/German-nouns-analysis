@@ -9,7 +9,7 @@ from main import parse_dict
 # df = parse_dict("de_en_dictionary.txt")
 df = pd.read_csv("dictionary.csv")
 
-####################################       DATA CLEANING       #########################################################
+##############################################        DATA CLEANING       ##############################################
 
 
 # removing unnecessary columns
@@ -55,7 +55,11 @@ m = m[m["Word class definitions"] != "{m}"]
 
 # check how many categories are
 options_m = set(list(m["Word class definitions"]))
-
+# print(options_m)
+# we notice following categories {'{m} {f} {n}', '{f} {m}', '{m} {f}', '{f} / Kleiner {m} / Kleines {n}', '{n} {m} {f}',
+# '{n}  {m}', '{m} {f} {pl}', '{f} {n} {m}', '{f} / Bischofshut {m}', '{m} bei Nichtmelden {n}', '{m} {n}', '{m}  {f}',
+# '{m} auf weltliche Güter {pl}', '{n} {m}', '{m} und Gestalt {f}', '{m} {pl}', '{f} {m} {n}', '{m} {n} {f}',
+# '{f}; Gegenwall {m}', '{f}  {m}', '{m} Phoebe {f}', '{m} und Tigris {m}'}
 
 # For a simpler analysis these categories will be deleted
 # Another approach would have been to keep nouns with two genders and use the first one as the main gender
@@ -119,7 +123,7 @@ df = df[df["Word class definitions"].isin(['{m}', "{f}", "{n}"])]
 df.rename(columns = {"Word class definitions": "gender"}, inplace=True)
 
 
-##########################################  DATA ANALYSIS  #############################################################
+###########################################################  DATA ANALYSIS  #############################################################
 # nouns ending in -ling, -ismus, -er, -ent, -and, -ant are masculine
 # nouns ending in -heit, -keit, -ung, -ion, -in, -e, -schaft are feminine
 # nouns ending in -chen, -lein, -tum, -um, -at, -o are neutral, according to
@@ -134,8 +138,9 @@ number_of_nouns = len(df.index)
 print(masculine_nouns / number_of_nouns, feminine_nouns / number_of_nouns, neutral_nouns / number_of_nouns)
 print(masculine_nouns / number_of_nouns + feminine_nouns / number_of_nouns + neutral_nouns / number_of_nouns)
 
-# create dataframe for the analysis
-# ending,  gender it represents, number of nouns with that ending, number of nouns with that ending and with the gender it represents, number of nouns with that ending but with another gender
+# create dataframe for the analysis !!!!!!!!!! scrie mei explicit !!!!!!!!!!!!!!!
+# ending,  gender it represents, number of nouns with that ending, number of nouns with that ending and with the gender
+# it represents, number of nouns with that ending but with another gender
 
 analysis = pd.DataFrame(columns=['ending', 'gender', 'good predictions', 'bad predictions'])
 
@@ -150,10 +155,11 @@ analysis["gender"] = pd.Series(dict["gender"])
 analysis["good predictions"] = pd.Series([0] * len(dict["gender"]))
 analysis["bad predictions"] = pd.Series([0] * len(dict["gender"]))
 
-
+nouns_with_ending = []
 
 for index_noun, noun in analysis.iterrows():
     words = df[df["Word"].str.endswith(noun["ending"])]
+    nouns_with_ending.append(len(words.index))
     good_matches = sum(words["gender"] == noun["gender"])
     bad_matches = sum(words["gender"] != noun["gender"])
     analysis["good predictions"][index_noun] = good_matches
@@ -161,7 +167,7 @@ for index_noun, noun in analysis.iterrows():
 
 analysis["good predictions (%)"] = (analysis["good predictions"] / (analysis["good predictions"] + analysis["bad predictions"])) * 100
 analysis["bad predictions (%)"] = (analysis["bad predictions"] / (analysis["good predictions"] + analysis["bad predictions"])) * 100
-
+analysis["number of nouns"] = nouns_with_ending
 analysis.sort_values(by=["good predictions (%)"], inplace=True, ascending=False)
 print(analysis)
 
