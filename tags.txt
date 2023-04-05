@@ -1,0 +1,132 @@
+Subject  	Description
+acad.	Academic Disciplines / Wissenschaft	4994	1628
+acc.	Accounting / Buchführung	1554	419
+admin.	(Public) Administration / (Öffentliche) Verwaltung	2877	426
+agr.	Agriculture, Aquaculture / Agrarwirtschaft, Land- und Gewässerbewirtschaftung	6656	294
+anat.	Human Anatomy / Humananatomie	9503	527
+archaeo.	Archaeology / Archäologie	2244	373
+archi.	Architecture / Architektur	6115	485
+armour	Historic Armour / Rüstungen, historische Schutzbekleidung	241	143
+art	Art / Kunst	4590	1200
+astron.	Astronomy / Astronomie	2683	623
+astronau	Astronautics / Astronautik, Raumfahrt	491	342
+audio	Audiology / Audiologie, Akustik	3434	208
+automot.	Automotive Engineering / Automobil- und Fahrzeugtechnik	5454	506
+aviat.	Aviation / Luftfahrt, Flugwesen	4359	478
+bibl.	Biblical / Biblisch	1712	385
+bike	Bicycle / Fahrrad	985	523
+biochem.	Biochemistry / Biochemie	6237	334
+biol.	Biology / Biologie	15623	690
+biotech.	Biotechnology / Biotechnologie	438	291
+bot.	Botany, Plants / Botanik, Pflanzen	56898	412
+brew	Brewing / Brauwesen	473	165
+chem.	Chemistry / Chemie	12196	552
+climbing	Climbing, Mountaineering / Bergsteigerei	493	260
+cloth.	Clothing, Fashion / Bekleidung, Mode	8765	461
+comics	Comics and Animated Cartoons / Comics und Zeichentrickfilme	404	358
+comm.	Commerce / Handel	9392	559
+comp.	Computer Sciences / Informatik, IT	11378	1652
+constr.	Construction / Bauwesen	7385	339
+cosmet.	Cosmetics & Body Care / Kosmetik und Körperpflege	1502	266
+curr.	Currencies / Währungen	888	263
+dance	Dance / Tanz	900	389
+dent.	Dental Medicine / Zahnmedizin	5016	133
+drugs	Drugs / Drogen	992	272
+ecol.	Ecology, Environment / Ökologie, Umwelt	5506	736
+econ.	Economy / Wirtschaft, Ökonomie	10654	933
+educ.	Education / Ausbildung	7932	1239
+electr.	Electrical Engin., Electronics / Elektrotechnik, Elektronik	13150	698
+engin.	Engineering / Ingenieurwissenschaften	2710	948
+entom.	Entomology / Entomologie, Insektenkunde	14261	109
+equest.	Equestrianism, Horses / Reitsport, Pferde	1354	132
+esot.	Esotericism / Esoterik	397	241
+ethn.	Ethnology / Ethnologie	2443	282
+EU	European Union / Europäische Union	1491	680
+F	Fiction: Names and Titles in Literature, Film, TV, Arts / Fiktion: Namen und Titel in Literatur, Film, TV, Kunst	14470	816
+film	Film / Film	9324	1302
+fin.	Finance / Finanzwesen	9202	593
+FireResc	Firefighting & Rescue / Feuerwehr & Rettungsdienst	1177	132
+fish	Ichthyology, fish, fishing / Fischkunde, Fischen, Angelsport	10529	113
+FoodInd.	Foodstuffs Industry / Lebensmittelindustrie	2840	309
+for.	Forestry / Forstwissenschaft, Forstwirtschaft	1373	175
+furn.	Furniture / Möbel	1854	234
+games	Games / Spiele	2217	908
+gastr.	Gastronomy, Cooking / Gastronomie, Kochen	17899	671
+geogr.	Geography / Geografie	12675	879
+geol.	Geology / Geologie	7040	305
+herald.	Heraldry / Heraldik	253	108
+hist.	History / Historische Begriffe, Geschichte	16053	1344
+hort.	Horticulture / Gartenbau	2390	249
+hunting	Hunting / Jagd	1063	132
+hydro.	Hydrology & Hydrogeology / Hydrologie & Hydrogeologie	2053	109
+idiom	Idiom / Idiom, Redewendung	9029	709
+ind.	Industry / Industrie	3816	507
+insur.	Insurance / Versicherungswesen	1902	172
+Internet	Internet / Internet	1666	1465
+jobs	Jobs, Employment Market / Berufe, Arbeitsmarkt	14309	589
+journ.	Journalism / Journalismus	1728	449
+law	Law / Jura, Rechtswesen	15848	597
+libr.	Library Science / Bibliothekswissenschaft	498	194
+ling.	Linguistics / Linguistik, Sprachwissenschaft	6747	1432
+lit.	Literature / Literatur	9975	1254
+market.	Marketing, Advertising / Marketing, Werbung, Vertrieb und Handelswesen	1716	553
+material	Materials Science / Materialwissenschaft, Werkstoffkunde	2899	290
+math.	Mathematics / Mathematik	8816	825
+med.	Medicine / Medizin	52603	846
+MedTech.	Medical Engineering & Imaging / Medizintechnik	9070	258
+meteo.	Meteorology / Meteorologie	3508	230
+mil.	Military / Militärwesen	10184	412
+mineral.	Mineralogy / Mineralogie	6325	154
+mining	Mining & Drilling / Bergbau & Bohrtechnik	2066	113
+mus.	Music / Musik	11446	1752
+mycol.	Mycology / Mykologie, Pilze	4816	114
+myth.	Mythology / Mythologie	1762	515
+name	Names of Persons / Namenkunde (nur Personennamen)	389	222
+naut.	Nautical Science / Nautik, Schifffahrtskunde	5741	221
+neol.	Neologisms / Neologismen (Wortneubildungen)	291	194
+nucl.	Nuclear Engineering / Nukleartechnik	632	182
+oenol.	Oenology / Önologie, Lehre vom Wein	1483	127
+optics	Optics / Optik	1720	173
+orn.	Ornithology / Ornithologie, Vogelkunde	28878	150
+pharm.	Pharmacy / Pharmazie	5661	294
+philat.	Philately / Philatelie, Briefmarkenkunde	231	63
+philos.	Philosophy / Philosophie	3763	964
+phonet.	Phonetics / Phonetik	464	413
+photo.	Photography / Fotografie	2402	833
+phys.	Physics / Physik	8812	812
+pol.	Politics / Politik	12365	1002
+print	Print, Typography, Layout / Druck, Typografie, Layout	1967	280
+proverb	Proverb / Sprichwort	1136	623
+psych.	Psychology / Psychologie	6671	922
+publ.	Publishing / Verlagswesen	1917	263
+QM	Quality Management / Qualitätsmanagement	2105	281
+quote	Quotation / Zitat	692	485
+RadioTV	Radio and Television / Radio und Fernsehen	3876	564
+rail	Rail / Eisenbahn	3007	220
+RealEst.	Real Estate / Immobilien	1623	240
+relig.	Religion / Religion	14525	693
+rhet.	Rhetoric / Rhetorik	195	409
+sociol.	Sociology / Soziologie	3454	547
+spec.	Specialized Term / Fachsprachlicher Ausdruck	5353	368
+sports	Sports / Sport	12187	966
+stat.	Statistics / Statistik	1521	355
+stocks	Stock Exchange / Börsenwesen	1842	262
+T	Taxonomic terms for animals, plants and fungi (incl. varieties and breeds) / Taxonomische Bezeichnungen für Tiere, Pflanzen und Pilze (inkl. Zuchtformen und Rassen)	130244	9
+tech.	Technology / Technik	32257	1265
+telecom.	Telecommunications / Telekommunikation	2401	544
+textil.	Textiles, Textile Industry / Textilien, Textilindustrie	2434	160
+theatre	Theatre / Theater	2735	503
+tools	Tools / Werkzeuge	4740	493
+toys	Toys / Spielzeug	625	227
+traffic	Traffic / Verkehrswesen	2480	324
+transp.	Transportation (Land Transport) / Transportwesen (Landtransport)	3191	341
+travel	Travel Industry / Touristik	2139	538
+TrVocab.	Travellers vocabulary / Reise-Wortschatz	1398	701
+unit	Units, Measures, Weights / Einheiten, Maße, Gewichte	960	433
+urban	Urban Planning / Urbanistik, Stadtplanung	953	231
+UWH	UNESCO World Heritage / UNESCO-Welterbe	95	267
+VetMed.	Veterinary Medicine / Veterinärmedizin	2948	169
+watches	Watches, Clocks / Uhren	496	206
+weapons	Weapons / Waffen	2704	395
+zool.	Zoology, Animals / Zoologie, Tierkunde	35730	666
+no field	no field / no field	35730	666
