@@ -13,3 +13,6 @@ Dict.cc license:
  License	https://www.dict.cc/translation_file_request.php
  Contains data from	http://dict.tu-chemnitz.de/ with friendly permission by Frank Richter, TU Chemnitz 
  Brought to you by	Paul Hemetsberger and the users of https://www.dict.cc/, 2002 - 2022
+ 
+ ### Setup
+ Make a folder named resources. Move tags.txt inside the folder. Download from dict.cc en-de dictionary, rename the txt file to de_en_dictionary.txt and move it in the folder.
