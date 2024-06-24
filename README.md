@@ -1,5 +1,5 @@
 # German-nouns-analysis
-Short analysis about german nouns and their gramatical gender.
+Short analysis of german nouns and their gramatical gender.
 
 The datasource is dict.cc's DE<>EN dictionary. The original file was parsed using a function from Dict.cc-parsing repository.
 
